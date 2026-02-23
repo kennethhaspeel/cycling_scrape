@@ -36,24 +36,24 @@ const dLijst = data.filter(x=>x.name !='')
 fs.writeFile("teams.json", JSON.stringify(dLijst, null, 2), "utf-8");
 console.log("Data saved to teams.json");
 
-const imageUrls = await page.$$eval("ul.list.horizontal img", imgs =>
-    imgs.map(img => img.src)
-  );
+// const imageUrls = await page.$$eval("ul.list.horizontal img", imgs =>
+//     imgs.map(img => img.src)
+//   );
 
-  for (let i = 0; i < imageUrls.length; i++) {
-    // Ensure URL is absolute
-    const absoluteUrl = new URL(imageUrls[i], baseUrl).href;
+//   for (let i = 0; i < imageUrls.length; i++) {
+//     // Ensure URL is absolute
+//     const absoluteUrl = new URL(imageUrls[i], baseUrl).href;
 
-    // Fetch image content
-    const response = await page.goto(absoluteUrl);
-    const buffer = await response.body();
+//     // Fetch image content
+//     const response = await page.goto(absoluteUrl);
+//     const buffer = await response.body();
 
-    // Save locally using the last part of the URL as filename
-    const filename = absoluteUrl.split("/").pop();
-    await fs.writeFile(`teamimage/${filename}`, buffer);
+//     // Save locally using the last part of the URL as filename
+//     const filename = absoluteUrl.split("/").pop();
+//     await fs.writeFile(`teamimage/${filename}`, buffer);
 
-    console.log(`Downloaded ${filename}`);
-  }
+//     console.log(`Downloaded ${filename}`);
+//   }
 
   await browser.close();
 }

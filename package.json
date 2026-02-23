@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@playwright/mcp": "^0.0.68",
     "axios": "^1.13.5",
     "https": "1.0.0",
     "playwright": "^1.58.2"

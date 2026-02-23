@@ -53,7 +53,7 @@ async function scrapeRiders() {
   //   }));
 
   //   // Save to JSON
-  //   await fs.writeFile("riders.json", JSON.stringify(normalizedRiders, null, 2), "utf-8");
+     await fs.writeFile("riders.json", JSON.stringify(tabel, null, 2), "utf-8");
 
   //   console.log("Rider data saved to riders.json");
 }
